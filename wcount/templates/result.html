@@ -1,0 +1,12 @@
+<h1>Result</h1>
+<br>
+<a href="{% url 'home'%}">Go back</a>
+<br>
+<h2>You have typed {{length}} words.</h2>
+<h2>Original Input: </h2>
+{{raw}}
+<h3>Word Count:</h3>
+{% for k, v in counts %}
+{{k}} : {{v}}
+<br>
+{%endfor%}
