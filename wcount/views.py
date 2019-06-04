@@ -15,5 +15,6 @@ def result(request):
         if word in counts:
             counts[word] +=1
         else:
-            counts[word] = 1
-    return render(request, 'result.html', {'raw': text, 'length': len(a), 'counts': counts.items()})
+            counts[word] = 1        
+    counts = sorted(counts.items(), key=lambda k : k[1], reverse=True)
+    return render(request, 'result.html', {'raw': text, 'length': len(a), 'counts': counts})
